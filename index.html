@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Лови Ритм — проверь чувство ритма</title>
+  <meta name="description" content="20 секунд: тапай или говори «та» в такт клику, а когда звук выключится — держи темп сам. Честная шкала до 1000 баллов.">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" href="/static/img/favicon.svg?v=8" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/static/css/app.css?v=5">
+  
+</head>
+<body data-page="test">
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Лови Ритм">
+      <span class="brand__dot" aria-hidden="true"></span>Лови Ритм
+    </a>
+    <nav class="topnav" aria-label="Разделы">
+      <a class="nav-link is-active" href="/" aria-current="page">Тест</a>
+        <a class="nav-link" href="/records.html">Рекорды</a>
+    </nav>
+  </header>
+
+  <main id="main"><div class="wrap">
+
+  <!-- ======================= СТАРТ ======================= -->
+  <section id="screenStart" class="screen">
+    <h1 class="hero">Лови Ритм</h1>
+    <p class="lead">
+      Тапайте в такт клику. Когда звук выключится —
+      <b>продолжайте в том же темпе.</b>
+    </p>
+
+    <p class="step">Выберите режим</p>
+    <div class="modes" role="group" aria-label="Способ ввода">
+      <button type="button" id="modeTap" class="mode is-on" aria-pressed="true">
+        <span class="mode__emoji" aria-hidden="true">👆</span>
+        <span class="mode__name">Тапами</span>
+        <span class="mode__desc">По экрану или клавишей «Пробел»</span>
+      </button>
+      <button type="button" id="modeVoice" class="mode" aria-pressed="false">
+        <span class="mode__emoji" aria-hidden="true">🎤</span>
+        <span class="mode__name">Голосом</span>
+        <span class="mode__desc">Резко говорите «та» в микрофон</span>
+      </button>
+    </div>
+
+    <button type="button" id="btnStart" class="btn btn--big">Начать тест</button>
+    <p id="micStatus" class="notice" hidden></p>
+  </section>
+
+  <!-- ====================== РЕЗУЛЬТАТ ===================== -->
+  <section id="screenResults" class="screen" hidden>
+    <p class="pill">Тест пройден</p>
+
+    <div class="score">
+      <span id="finalScore" class="score__num">0</span>
+      <span class="score__max">из 1000</span>
+    </div>
+    <h2 id="finalRank" class="rank"></h2>
+    <p id="finalNote" class="lead lead--small"></p>
+
+    <div class="stats">
+      <div class="stat"><b id="statAbs">—</b><span>средняя ошибка</span></div>
+      <div class="stat"><b id="statSpread">—</b><span>разброс</span></div>
+      <div class="stat"><b id="statBias">—</b><span>спешите / тянете</span></div>
+      <div class="stat"><b id="statTaps">—</b><span>зачётных ударов</span></div>
+    </div>
+
+    <form id="saveForm" class="save">
+      <input id="nameInput" type="text" maxlength="20" placeholder="Ваше имя"
+             autocomplete="off" aria-label="Ваше имя">
+      <button id="btnSave" class="btn btn--big" type="submit">Сохранить в рекорды</button>
+    </form>
+    <p id="saveMsg" class="notice"></p>
+
+    <div class="actions">
+      <button type="button" id="btnAgain" class="btn btn--ghost">Пройти ещё раз</button>
+      <a class="btn btn--ghost" href="/records.html">Таблица рекордов</a>
+    </div>
+
+    <details class="details">
+      <summary>Подробно по ударам</summary>
+      <div id="beatCells" class="cells"></div>
+      <div id="chart" class="chart"></div>
+    </details>
+  </section>
+</div>
+
+<!-- ============ ТЕСТ: тап работает по всему экрану ============ -->
+<section id="screenTest" class="stage-wrap" hidden>
+  <div id="stage" class="stage" role="button" tabindex="0" aria-label="Тапайте в ритм">
+    <p id="stageKicker" class="stage__kicker"></p>
+    <p id="stageMain" class="stage__main"></p>
+    <p id="stageSub" class="stage__sub"></p>
+  </div>
+  <button type="button" id="btnStop" class="stage__stop">Завершить</button>
+</section>
+</main>
+
+  <footer class="foot">
+    <span>Лови Ритм · 2026</span>
+  </footer>
+
+  <script src="/static/js/site.js?v=8" defer></script>
+  <script src="/static/js/voice-gate.js?v=4" defer></script><script src="/static/js/mic.js?v=3" defer></script><script src="/static/js/test.js?v=28" defer></script>
+</body>
+</html>
