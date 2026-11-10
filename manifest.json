@@ -1,0 +1,13 @@
+{
+  "name": "Лови Ритм",
+  "short_name": "Лови Ритм",
+  "description": "Тест чувства ритма: тапай или говори «та» в такт, а когда звук выключится — держи темп сам.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/static/img/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
