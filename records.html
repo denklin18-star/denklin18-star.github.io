@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Таблица рекордов — Лови Ритм</title>
+  <meta name="description" content="Лучшие результаты теста чувства ритма.">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" href="/static/img/favicon.svg?v=8" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/static/css/app.css?v=5">
+  
+</head>
+<body data-page="records">
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Лови Ритм">
+      <span class="brand__dot" aria-hidden="true"></span>Лови Ритм
+    </a>
+    <nav class="topnav" aria-label="Разделы">
+      <a class="nav-link" href="/">Тест</a>
+        <a class="nav-link is-active" href="/records.html" aria-current="page">Рекорды</a>
+    </nav>
+  </header>
+
+  <main id="main"><div class="wrap">
+  <section class="screen">
+    <p class="pill">Таблица рекордов</p>
+    <h1 class="hero hero--small">Лучшие результаты</h1>
+    <p class="lead lead--small">
+      Все сохранённые попытки. «Ошибка» — средний промах по времени:
+      чем меньше, тем ровнее был темп.
+    </p>
+
+    <div class="stats">
+      <div class="stat"><b data-stat="count">—</b><span>попыток</span></div>
+      <div class="stat"><b data-stat="best">—</b><span>лучший балл</span></div>
+      <div class="stat"><b data-stat="average">—</b><span>средний балл</span></div>
+    </div>
+
+    <div class="table-card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th><th>Имя</th><th>Режим</th><th class="num">Баллы</th>
+            <th class="num">Ошибка</th><th class="num">Удары</th><th class="num">Дата</th>
+          </tr>
+        </thead>
+        <tbody id="recordsBody">
+          <tr><td colspan="7">Загрузка…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn--big" href="/">Пройти тест</a>
+    </div>
+
+    <p class="hint">Нажмите на имя игрока, чтобы посмотреть его подробный результат.</p>
+  </section>
+</div>
+
+<!-- Карточка игрока -->
+<div id="playerModal" class="modal" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="pmName">
+    <button type="button" class="modal__close" data-close aria-label="Закрыть">×</button>
+    <p class="pill">Результат игрока</p>
+    <h2 id="pmName" class="modal__name"></h2>
+    <span id="pmMode" class="tag" hidden></span>
+    <div class="score score--modal">
+      <span id="pmScore" class="score__num">0</span>
+      <span class="score__max">из 1000</span>
+    </div>
+    <p id="pmRank" class="rank"></p>
+    <div class="stats">
+      <div class="stat"><b id="pmDev">—</b><span>средняя ошибка</span></div>
+      <div class="stat"><b id="pmTaps">—</b><span>зачётных ударов</span></div>
+      <div class="stat"><b id="pmPlace">—</b><span>место в таблице</span></div>
+      <div class="stat"><b id="pmVs">—</b><span>к среднему баллу</span></div>
+    </div>
+    <div id="pmChart" class="chart" hidden></div>
+    <p id="pmNoChart" class="notice" hidden>Подробный график для этой попытки не сохранён.</p>
+    <p id="pmDate" class="notice"></p>
+  </div>
+</div>
+</main>
+
+  <footer class="foot">
+    <span>Лови Ритм · 2026</span>
+  </footer>
+
+  <script src="/static/js/site.js?v=8" defer></script>
+  
+</body>
+</html>
