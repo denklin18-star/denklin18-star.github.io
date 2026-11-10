@@ -1,6 +1,6 @@
 {
-  "name": "loviritm",
-  "short_name": "loviritm",
+  "name": "Лови Ритм",
+  "short_name": "Лови Ритм",
   "description": "Тест чувства ритма: тапай или говори «та» в такт, а когда звук выключится — держи темп сам.",
   "start_url": "/",
   "display": "standalone",
